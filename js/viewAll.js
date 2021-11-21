@@ -1,5 +1,5 @@
-const getGoods = () => {
-  const links = document.querySelectorAll(".navigation-link");
+const getViewAll = () => {
+  const viewAllBtn = document.querySelector('.more');
 
   const renderGoods = (goods) => {
     const goodsContainer = document.querySelector(".long-goods-list");
@@ -31,41 +31,37 @@ const getGoods = () => {
     });
   };
 
-  const getData = (value, category) => {
-    // ПОЛУЧАЕМ С УДАЛЕННОГО СЕРВЕРА(firebase)
-    fetch(
-      "https://willberries-project-default-rtdb.europe-west1.firebasedatabase.app/db.json"
-    )
+  const getData = () => {
+    const url = "https://willberries-project-default-rtdb.europe-west1.firebasedatabase.app/db.json"
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        const array = category
-          ? data.filter((item) => item[category] === value)
-          : data;
-
-        localStorage.setItem("goods", JSON.stringify(array));
+        
+        localStorage.setItem("goods", JSON.stringify(data));
 
         if (window.location.pathname !== "/goods.html") {
           window.location.href = "/goods.html";
         } else {
-          renderGoods(array);
+          renderGoods(data);
         }
       });
   };
 
-  links.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      const linkValue = link.textContent;
-      const category = link.dataset.field;
-      getData(linkValue, category);
-    });
-  });
-
   const renderData =
     localStorage.getItem("goods") && window.location.pathname === "/goods.html";
-  if (renderData) {
-    renderGoods(JSON.parse(localStorage.getItem("goods")));
-  }
-};
+    if (renderData) {
+      renderGoods(JSON.parse(localStorage.getItem("goods")));
+    }
 
-getGoods();
+    try {
+      viewAllBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        getData();
+      })
+    } catch(e) {
+      console.error(e.message);
+      console.error("Не получается исправить ошибку. Help me, please)")
+    }
+}
+
+getViewAll();
