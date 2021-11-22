@@ -62,10 +62,10 @@ const getGoods = () => {
   });
 
   const renderData =
-    localStorage.getItem("goods") && window.location.pathname === "/goods.html";
+    localStorage.getItem("goods") && window.location.pathname === "goods.html";
     const githubRenderData = 
       localStorage.getItem("goods") 
-      && window.location.pathname === "/willberries-js//goods. html";
+      && window.location.pathname === "goods. html";
   if (renderData || githubRenderData) {
     renderGoods(JSON.parse(localStorage.getItem("goods")));
   }
