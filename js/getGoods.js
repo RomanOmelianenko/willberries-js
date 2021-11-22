@@ -63,10 +63,8 @@ const getGoods = () => {
 
   const renderData =
     localStorage.getItem("goods") && window.location.pathname === "goods.html";
-    const githubRenderData = 
-      localStorage.getItem("goods") 
-      && window.location.pathname === "goods. html";
-  if (renderData || githubRenderData) {
+
+  if (renderData) {
     renderGoods(JSON.parse(localStorage.getItem("goods")));
   }
 
