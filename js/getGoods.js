@@ -46,9 +46,11 @@ const getGoods = () => {
 
         if (window.location.pathname !== "/goods.html") {
           window.location.href = "/goods.html";
-        } else if (window.location.pathname !== "/willberries-js/goods.html") {
+        } 
+        else if (window.location.pathname === "/willberries-js/goods.html") {
           window.location.href = "/willberries-js/goods.html"
-        } else {
+        } 
+        else {
           renderGoods(array);
         }
       });
@@ -65,7 +67,10 @@ const getGoods = () => {
 
   const renderData =
     localStorage.getItem("goods") && window.location.pathname === "/goods.html";
-  if (renderData) {
+    const githubRenderData = 
+      localStorage.getItem("goods") 
+      && window.location.pathname === "/willberries-js//goods. html";
+  if (renderData || githubRenderData) {
     renderGoods(JSON.parse(localStorage.getItem("goods")));
   }
 

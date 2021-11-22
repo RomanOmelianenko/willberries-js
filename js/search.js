@@ -40,9 +40,11 @@ const search = function () {
 
         if (window.location.pathname !== "/goods.html") {
           window.location.href = "/goods.html";
-        } else if (window.location.pathname === "/willberries-js/goods.html") {
-          window.location.href = "/goods.html"
-        } else {
+        } 
+        else if (window.location.pathname === "/willberries-js/goods.html") {
+          window.location.href = "/willberries-js/goods.html"
+        } 
+        else {
           renderGoods(array);
         }
       });
