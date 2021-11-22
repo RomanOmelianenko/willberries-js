@@ -1,5 +1,6 @@
 const getGoods = () => {
   const links = document.querySelectorAll(".navigation-link");
+  const viewAllBtn = document.querySelector(".more");
 
   const renderGoods = (goods) => {
     const goodsContainer = document.querySelector(".long-goods-list");
@@ -33,9 +34,8 @@ const getGoods = () => {
 
   const getData = (value, category) => {
     // ПОЛУЧАЕМ С УДАЛЕННОГО СЕРВЕРА(firebase)
-    fetch(
-      "https://willberries-project-default-rtdb.europe-west1.firebasedatabase.app/db.json"
-    )
+    const url = "https://willberries-project-default-rtdb.europe-west1.firebasedatabase.app/db.json"
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         const array = category
@@ -46,6 +46,8 @@ const getGoods = () => {
 
         if (window.location.pathname !== "/goods.html") {
           window.location.href = "/goods.html";
+        } else if (window.location.pathname === "/willberries-js/goods.html") {
+          window.location.href = "/goods.html"
         } else {
           renderGoods(array);
         }
@@ -66,6 +68,14 @@ const getGoods = () => {
   if (renderData) {
     renderGoods(JSON.parse(localStorage.getItem("goods")));
   }
+
+  // viewAllBtn
+  if (viewAllBtn) {
+    viewAllBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      getData();
+    });
+  };
 };
 
 getGoods();
