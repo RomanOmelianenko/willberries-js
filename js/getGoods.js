@@ -47,7 +47,7 @@ const getGoods = () => {
         if (window.location.pathname !== "/goods.html") {
           window.location.href = "/goods.html";
         } else if (window.location.pathname !== "/willberries-js/goods.html") {
-          window.location.href = "https://romanomelianenko.github.io/willberries-js/goods.html"
+          window.location.href = "/willberries-js/goods.html"
         } else {
           renderGoods(array);
         }
