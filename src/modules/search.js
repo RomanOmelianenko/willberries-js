@@ -52,4 +52,4 @@ const search = function () {
   });
 };
 
-search();
+export default search;

@@ -1,0 +1,25 @@
+{
+  "name": "willberries-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanOmelianenko/willberries-js.git"
+  },
+  "keywords": [],
+  "author": "Roman_Omelianenko <romelianenko17@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomanOmelianenko/willberries-js/issues"
+  },
+  "homepage": "https://github.com/RomanOmelianenko/willberries-js#readme",
+  "devDependencies": {
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}

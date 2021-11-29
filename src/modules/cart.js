@@ -162,4 +162,4 @@ const cart = function () {
   }
 };
 
-cart();
+export default cart;

@@ -17,9 +17,7 @@
 	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
 	<!-- <link rel="stylesheet" href="css/swiper-bundle.min.css" /> -->
 	<link rel="stylesheet" href="css/style.css">
-	<script src="./js/cart.js" defer></script>
-	<script src="./js/search.js" defer></script>
-	<script src="./js/getGoods.js" defer></script>
+	<script src="./dist/goods.js" defer></script>
 </head>
 <!-- class="show-goods" -->
 
@@ -381,8 +379,8 @@
 				</tfoot>
 			</table>
 			<form class="modal-form" action="">
-				<input class="modal-input" type="text" placeholder="Имя" name="nameCustomer">
-				<input class="modal-input" type="text" placeholder="Телефон" name="phoneCustomer">
+				<input class="modal-input" type="text" placeholder="Имя" name="nameCustomer" required>
+				<input class="modal-input" type="text" placeholder="Телефон" name="phoneCustomer" required>
 				<button class="button cart-buy" type="submit">
 					<span class="button-text">Checkout</span>
 				</button>
