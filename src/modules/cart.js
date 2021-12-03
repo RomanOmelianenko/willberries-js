@@ -28,7 +28,15 @@ const cart = function () {
 
   cart.addEventListener('click', (event) => {
     if (!event.target.closest('modal') && event.target.classList.contains('overlay')) {
-      cart.style.display = ''
+      cart.style.display = '';
+    }
+  })
+
+  // key: Escape
+  window.addEventListener('keydown', (event) => {
+    // console.dir(event);
+    if (event.key === 'Escape') {
+      cart.style.display = '';
     }
   })
  
