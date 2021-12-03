@@ -34,6 +34,10 @@ img {
     letter-spacing: 0.5px;
 }
 
+.navigation-link:hover {
+    color: #6b6d6e;
+}
+
 button {
     cursor: pointer;
 }
@@ -67,6 +71,10 @@ button {
 .button-icon:last-child {
     margin-right: 0;
 
+}
+
+.btn:hover, .button:hover {
+    background: #1e78f5;
 }
 
 .cart-count {
@@ -143,6 +151,10 @@ button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+.slider-button:hover {
+    opacity: 0.9;
 }
 
 .card {
@@ -320,6 +332,11 @@ button {
     font-weight: 900;
     font-size: 14px;
     line-height: 20px;
+    opacity: 0.9;
+}
+
+.footer-menu-link:hover {
+    opacity: 1;
 }
 
 .social-link {
@@ -429,8 +446,13 @@ button {
     display: block;
     margin-left: auto;
     height: 40px;
+    opacity: 0.9;
 }
 
+.cart-buy:hover {
+    background-color: #28a745;
+    opacity: 1;
+}
 
 .mw-160 {
     max-width: 160px;
