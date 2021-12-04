@@ -48,7 +48,7 @@ const getGoods = () => {
           (window.location.href = "/goods.html")  // для локального сервера
           // (window.location.href = "/willberries-js/goods.html"); // для удалённого сервера GitHub
         } else if (window.location.pathname === "/goods.html") {
-          (window.location.href = "/willberries-js/goods.html");
+          window.location.href !== "/willberries-js/goods.html"
         } else {
           renderGoods(array);
         }
