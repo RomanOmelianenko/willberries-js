@@ -63,7 +63,7 @@ const getGoods = () => {
   });
 
   const renderData =
-    localStorage.getItem("goods") && window.location.pathname === "/goods.html";
+    localStorage.getItem("goods") && window.location.pathname === "/willberries-js/goods.html";
 
   if (renderData) {
     renderGoods(JSON.parse(localStorage.getItem("goods")));
